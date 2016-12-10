@@ -18,7 +18,9 @@ namespace BlueFlasher
                 var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.Spacebar)
                 {
+                    Console.WriteLine("Flashing...");
                     Flash();
+                    Console.Clear();
                 }
                 else
                 {

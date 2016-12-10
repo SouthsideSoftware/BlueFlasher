@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using DelcomSupport.LowLevel;
-using NLog;
 
 namespace DelcomSupport
 {
@@ -11,7 +10,6 @@ namespace DelcomSupport
         private readonly DelcomHID delcom = new DelcomHID();
         DelcomHID.HidTxPacketStruct txCmd;
         DelcomIndicatorState? state;
-        Logger logger = LogManager.GetCurrentClassLogger();
 
         public DelcomLight()
         {
@@ -23,7 +21,7 @@ namespace DelcomSupport
         {
             if (state != newState)
             {
-                logger.Debug("Change Delcom build light to {0}", newState);
+
                 AllOff();
                 switch (newState)
                 {
